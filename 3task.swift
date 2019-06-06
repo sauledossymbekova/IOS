@@ -1,14 +1,6 @@
+
 class Solution {
     func flipAndInvertImage(_ A: [[Int]]) -> [[Int]] {
-        var output: [[Int]] = []
-        
-        for row in A {
-            var sub: [Int] = []
-            for e in row.reversed() {
-                sub.append(e ^ 1)
-            }
-            output.append(sub)
-        }
-        return output
+        return A.map {  $0.reversed().map { $0 == 0 ? 1 : 0 } }
     }
 }
